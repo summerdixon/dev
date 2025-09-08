@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+    --font-title: "Boldonse", "sans-serif";
+    --font-heading: "Victor Mono", "monospace";
+    --font-body: "Karla", "sans-serif";
+    --color-blue-primary: #00249C;
+    --color-blue-secondary: #4361C3;
+    --color-blue-tertiary: #829BEB;
+    --color-gray-primary: #7B86AB;
+    --color-gray-secondary: #B2BBDB;
+    --color-gray-tertiary: #D2DBF8;
+    --space-xs: 2px;
+    --space-sm: 4px;
+    --space-md: 8px;
+    --space-lg: 12px;
+    --space-xl: 16px;
+}
+
+.title {
+    color: var(--color-blue-primary);
+    font-family: var(--font-title);
+    font-size: 24px;
+}
