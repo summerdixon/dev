@@ -1,6 +1,8 @@
 ---
 import MuiRoot from "../components/MuiRoot.tsx";
 import Hero from "../components/Hero.tsx";
+import NavBar from "../components/NavBar.tsx";
+import Footer from "../components/Footer.tsx";
 const title = "summer.dev";
 ---
 
@@ -12,9 +14,11 @@ const title = "summer.dev";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <main class="container" style="padding-block: var(--space-8);">
+    <main>
       <MuiRoot client:idle>
+		<NavBar/>
 		<Hero/>
+		<Footer/>
       </MuiRoot>
     </main>
   </body>

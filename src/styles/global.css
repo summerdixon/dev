@@ -1,9 +1,16 @@
 @import "tailwindcss";
 
+html, body, #root {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
-    --font-title: "Boldonse", "sans-serif";
-    --font-heading: "Victor Mono", "monospace";
-    --font-body: "Karla", "sans-serif";
+    --font-title: "Boldonse", sans-serif;
+    --font-heading: "Victor Mono", monospace;
+    --font-body: "Karla", sans-serif;
     --color-blue-primary: #00249C;
     --color-blue-secondary: #4361C3;
     --color-blue-tertiary: #829BEB;
@@ -13,12 +20,70 @@
     --space-xs: 2px;
     --space-sm: 4px;
     --space-md: 8px;
-    --space-lg: 12px;
-    --space-xl: 16px;
+    --space-lg: 16px;
+    --space-xl: 24px;
+}
+
+.heroContainer {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    position: relative;
 }
 
 .title {
     color: var(--color-blue-primary);
     font-family: var(--font-title);
+    font-size: 36px;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.body {
+    font-family: var(--font-body);
+}
+
+.heading {
+    color: var(--color-blue-secondary);
+    font-family: var(--font-heading);
     font-size: 24px;
+}
+
+.toolbarContainer {
+    display: flex;
+    gap: var(--space-xl);
+    width: 100%;
+    justify-content: center;
+}
+
+.appBarContainer {
+    background-color: var(--color-blue-primary);
+    box-shadow: none;
+}
+
+.button {
+    background-color: var(--color-blue-secondary);
+    color: white;
+    box-shadow: none;
+    font-family: var(--font-heading);
+    text-transform: none;
+}
+
+.button:hover {
+    background-color: var(--color-blue-tertiary);
+}
+
+.footerContainer {
+    position: fixed;
+    bottom: 0;
+}
+
+.centeredImage {
+    display: block;
+    margin: auto;
+    width: 50%;
+    padding-left: var(--space-lg);
 }

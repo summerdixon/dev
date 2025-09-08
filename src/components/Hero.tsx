@@ -1,20 +1,13 @@
-import "../styles/global.css";
-import { makeStyles } from '@mui/styles';
+import '../styles/global.css';
 
-const useStyles = makeStyles({
-    root: {
-      backgroundColor: 'var(--color-gray-tertiary)',
-      marginLeft: 'var(--space-xl)',
-      marginTop: 'var(--space-xl)',
-    },
-  });
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 export default function Hero() {
-    const classes = useStyles();
-
     return (
-        <div className={classes.root}>
-            <h1 className="title"> Summer Dixon Personal Website </h1>
-        </div>
+        <Box className="heroContainer">
+            <img src="public/landscape-window.svg" className="centeredImage"></img>
+            <Typography className="title"> Summer Dixon </Typography>
+        </Box>
     );
 }
