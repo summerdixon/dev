@@ -10,7 +10,7 @@ export default function Footer() {
     <Box>
       <AppBar position="relative" className="appBarContainer" sx={{ top: 'auto', bottom: 0 }}>
         <Toolbar>
-          <Typography className="body">Last updated Sept. 8, 2025</Typography>
+          <Typography className="bodyInverse">Last updated Sept. 8, 2025</Typography>
         </Toolbar>
       </AppBar>
     </Box>

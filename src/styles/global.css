@@ -17,11 +17,13 @@ html, body, #root {
     --color-gray-primary: #7B86AB;
     --color-gray-secondary: #B2BBDB;
     --color-gray-tertiary: #D2DBF8;
-    --space-xs: 2px;
-    --space-sm: 4px;
-    --space-md: 8px;
-    --space-lg: 16px;
-    --space-xl: 24px;
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 36px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
 }
 
 .heroContainer {
@@ -33,7 +35,7 @@ html, body, #root {
 .title {
     color: var(--color-blue-primary);
     font-family: var(--font-title);
-    font-size: 36px;
+    font-size: 48px;
     position: absolute;
     inset: 0;
     display: grid;
@@ -42,14 +44,21 @@ html, body, #root {
     pointer-events: none;
 }
 
-.body {
-    font-family: var(--font-body);
-}
-
 .heading {
     color: var(--color-blue-secondary);
     font-family: var(--font-heading);
-    font-size: 24px;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.body {
+    font-family: var(--font-body);
+    color: var(--color-blue-primary);
+}
+
+.bodyInverse {
+    font-family: var(--font-body);
+    color: var(--color-gray-tertiary);
 }
 
 .toolbarContainer {
@@ -85,5 +94,23 @@ html, body, #root {
     display: block;
     margin: auto;
     width: 50%;
-    padding-left: var(--space-lg);
+    padding-left: var(--space-md);
+}
+
+.contentContainer {
+    margin-left: var(--space-3xl);
+    margin-right: var(--space-3xl);
+    margin-bottom: var(--space-xl);
+}
+
+.chipGroup {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-sm);
+}
+
+.chip {
+    background-color: var(--color-blue-secondary);
+    color: white;
+    font-family: var(--font-body);
 }
