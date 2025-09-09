@@ -77,6 +77,10 @@ html, body, #root {
 .appBarContainer {
     background-color: var(--color-blue-primary);
     box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    position: relative; 
+    overflow: hidden;
 }
 
 .button {
@@ -123,4 +127,45 @@ html, body, #root {
     background-color: var(--color-blue-secondary);
     color: white;
     font-family: var(--font-body);
+}
+
+.footerCritter {
+    --travel: 270px;
+    --duration: 15s;
+    position: absolute;
+    left: 60%;
+    bottom: 8px;
+    height: 48px;
+    pointer-events: none;
+    will-change: transform;
+    animation: critter-walk var(--duration) ease-in-out infinite;
+    z-index: 0;
+  }
+  
+@keyframes critter-walk {
+    0%       { transform: translateX(calc(-50% - var(--travel))) scaleX(-1); }
+    49.999%  { transform: translateX(calc(-50% + var(--travel))) scaleX(-1); }
+    50%      { transform: translateX(calc(-50% + var(--travel))) scaleX(1); }
+    100%     { transform: translateX(calc(-50% - var(--travel))) scaleX(1); }
+}
+  
+.toggle {
+    position: absolute;
+    right: var(--space-lg);
+    color: var(--color-gray-tertiary);
+    border-color: var(--color-gray-tertiary);
+    height: 36px;
+    margin-top: var(--space-md);
+    z-index: 1;
+}
+
+.toggle:hover {
+    color: var(--color-gray-tertiary);
+    background-color: var(--color-blue-secondary);
+}
+
+.toggle.Mui-selected {
+    background: var(--color-blue-secondary);
+    border-color: var(--color-gray-tertiary);
+    color: var(--color-gray-tertiary);
 }
