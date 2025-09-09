@@ -51,6 +51,12 @@ html, body, #root {
     font-weight: bold;
 }
 
+.headingSecondary {
+    color: var(--color-blue-tertiary);
+    font-family: var(--font-heading);
+    font-size: 24px;
+}
+
 .body {
     font-family: var(--font-body);
     color: var(--color-blue-primary);
@@ -101,12 +107,16 @@ html, body, #root {
     margin-left: var(--space-3xl);
     margin-right: var(--space-3xl);
     margin-bottom: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
 }
 
 .chipGroup {
     display: flex;
     flex-direction: row;
     gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
 }
 
 .chip {
