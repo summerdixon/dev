@@ -234,3 +234,10 @@ html[data-anim="off"] .anim { animation-play-state: paused !important; }
     color: var(--color-blue-tertiary);
     opacity: 0.5;
 }
+
+.alert {
+    max-height: 36px;
+    align-self: center;
+    align-items: center;
+    font-family: var(--font-body);
+}
