@@ -131,7 +131,7 @@ footer .appBarContainer { width: 100%; }
 
 .footerCritter {
     --travel: 270px;
-    --duration: 15s;
+    --duration: 25s;
     position: absolute;
     left: 60%;
     bottom: 8px;
@@ -199,3 +199,38 @@ html[data-anim="off"] .anim { animation-play-state: paused !important; }
 :root { --anim-play: paused; }
 :root[data-anim="on"] { --anim-play: running; }
 .anim { animation-play-state: var(--anim-play) !important; }
+
+.movingArrow {
+    --travel2: 5px;
+    --duration2: 5s;
+    position: absolute;
+    right: 20%;
+    top: 25%;
+    height: 24px;
+    pointer-events: none;
+    will-change: transform;
+    animation: arrow-move var(--duration2) ease-in-out infinite;
+    z-index: 0;
+  }
+  
+@keyframes arrow-move {
+    0%       { transform: translateX(calc(-50% - var(--travel2))) translateY(calc(-50% - var(--travel2))); }
+    50%      { transform: translateX(calc(-50% + var(--travel2))) translateY(calc(-50% + var(--travel2))); }
+    100%     { transform: translateX(calc(-50% - var(--travel2))) translateY(calc(-50% - var(--travel2))); }
+}
+
+.xButton {
+    z-index: 2;
+    position: absolute;
+    top: 3px;
+    right: 268px;
+    height: 36px;
+    width: 36px;
+    opacity: 0;
+}
+
+.xButton:hover {
+    background-color: transparent;
+    color: var(--color-blue-tertiary);
+    opacity: 0.5;
+}
