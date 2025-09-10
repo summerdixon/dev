@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
-html, body, #root {
-    width: 100%;
-    min-width: 0;
-    margin: 0;
-    padding: 0;
+html, body { height: 100%; margin: 0; }
+body.site {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
+
+main { flex: 1 0 auto; }
 
 :root {
     --font-title: "Boldonse", sans-serif;
@@ -24,6 +26,7 @@ html, body, #root {
     --space-xl: 36px;
     --space-2xl: 48px;
     --space-3xl: 64px;
+    --space-4xl: 84px;
 }
 
 .heroContainer {
@@ -74,6 +77,8 @@ html, body, #root {
     justify-content: center;
 }
 
+footer .appBarContainer { width: 100%; }
+
 .appBarContainer {
     background-color: var(--color-blue-primary);
     box-shadow: none;
@@ -93,11 +98,6 @@ html, body, #root {
 
 .button:hover {
     background-color: var(--color-blue-tertiary);
-}
-
-.footerContainer {
-    position: fixed;
-    bottom: 0;
 }
 
 .centeredImage {
@@ -148,24 +148,54 @@ html, body, #root {
     50%      { transform: translateX(calc(-50% + var(--travel))) scaleX(1); }
     100%     { transform: translateX(calc(-50% - var(--travel))) scaleX(1); }
 }
-  
-.toggle {
+
+.animationToggle {
     position: absolute;
+    top: var(--space-4xl);
     right: var(--space-lg);
-    color: var(--color-gray-tertiary);
-    border-color: var(--color-gray-tertiary);
-    height: 36px;
-    margin-top: var(--space-md);
-    z-index: 1;
+    border-color: var(--color-blue-secondary);
+    border-radius: 12px;
+    border-width: 1.5px;
+    z-index: 2;
 }
 
-.toggle:hover {
-    color: var(--color-gray-tertiary);
-    background-color: var(--color-blue-secondary);
+.animationToggleEnabled {
+    position: absolute;
+    top: var(--space-4xl);
+    right: var(--space-lg);
+    border-color: var(--color-blue-secondary);
+    border-radius: 12px;
+    border-width: 1.5px;
+    z-index: 2;
+    background: var(--color-gray-tertiary) !important;
 }
 
-.toggle.Mui-selected {
-    background: var(--color-blue-secondary);
-    border-color: var(--color-gray-tertiary);
-    color: var(--color-gray-tertiary);
+.animationToggleDisabled {
+    position: absolute;
+    top: var(--space-4xl);
+    right: var(--space-lg);
+    border-color: var(--color-gray-secondary);
+    border-radius: 12px;
+    border-width: 1.5px;
+    z-index: 2;
+    background: white;
 }
+
+.animationIconEnabled {
+    color: var(--color-blue-secondary);
+}
+
+.animationIconDisabled {
+    color: var(--color-gray-secondary);
+}
+
+:root { --anim-play: running; }
+:root[data-anim="off"] { --anim-play: paused; }
+
+.anim { animation-play-state: var(--anim-play) !important; }
+
+html[data-anim="off"] .anim { animation-play-state: paused !important; }
+
+:root { --anim-play: paused; }
+:root[data-anim="on"] { --anim-play: running; }
+.anim { animation-play-state: var(--anim-play) !important; }

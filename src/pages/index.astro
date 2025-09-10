@@ -2,6 +2,7 @@
 import MuiRoot from "../components/MuiRoot.tsx";
 import Hero from "../components/Hero.tsx";
 import NavBar from "../components/NavBar.tsx";
+import AnimationToggle from "../components/AnimationToggle";
 import Introduction from "../components/Introduction.tsx";
 import Skills from "../components/Skills.tsx";
 import Footer from "../components/Footer.tsx";
@@ -12,18 +13,23 @@ const title = "summer.dev";
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
-    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="src/styles/global.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body>
+  <body class="site">
     <main>
       <MuiRoot client:idle>
 		<NavBar/>
+		<AnimationToggle client:load/>
 		<Hero/>
 		<Introduction/>
 		<Skills/>
-		<Footer/>
       </MuiRoot>
     </main>
+	<footer>
+        <MuiRoot client:idle>
+            <Footer />
+        </MuiRoot>
+    </footer>
   </body>
 </html>

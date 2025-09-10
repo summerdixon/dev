@@ -1,0 +1,31 @@
+---
+import MuiRoot from "../components/MuiRoot.tsx";
+import NavBar from "../components/NavBar.tsx";
+import AnimationToggle from "../components/AnimationToggle";
+import ContactMe from "../components/ContactMe.tsx";
+import Footer from "../components/Footer.tsx";
+const title = "summer.dev";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="src/styles/global.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="site">
+    <main>
+      <MuiRoot client:idle>
+		<NavBar/>
+        <AnimationToggle client:load/>
+        <ContactMe/>
+      </MuiRoot>
+    </main>
+    <footer>
+        <MuiRoot client:idle>
+            <Footer />
+        </MuiRoot>
+    </footer>
+  </body>
+</html>

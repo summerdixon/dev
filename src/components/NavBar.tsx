@@ -10,9 +10,9 @@ export default function NavBar() {
         <Box>
         <AppBar position="static" className="appBarContainer">
             <Toolbar className="toolbarContainer">
-                <Fab variant="extended" size="medium" className="button">About</Fab>
-                <Fab variant="extended" size="medium" className="button">Projects</Fab>
-                <Fab variant="extended" size="medium" className="button">Contact</Fab>
+                <Fab variant="extended" size="medium" href="/" className="button">About</Fab>
+                <Fab variant="extended" size="medium" href="/projects" className="button">Projects</Fab>
+                <Fab variant="extended" size="medium" href="/contact" className="button">Contact</Fab>
             </Toolbar>
         </AppBar>
         </Box>
