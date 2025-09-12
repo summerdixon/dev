@@ -11,7 +11,7 @@ export default function ContactMe() {
     const handleCopyClick = async () => {
         try {
             await navigator.clipboard.writeText(textToCopy);
-            setCopySuccess('Copied email to clipboard!');
+            setCopySuccess('Email copied to clipboard!');
         } catch (err) {
             setCopySuccess('Failed to copy!');
             console.error('Failed to copy text: ', err);
@@ -23,7 +23,7 @@ export default function ContactMe() {
 
     return (
         <Box className="contentContainer" style={{ gap: "var(--space-md)"}}>
-            <Typography className="heading" style={{ paddingTop: "var(--space-xl)" }}>Please Reach Out!</Typography>
+            <Typography className="heading" style={{ paddingTop: "var(--space-4xl)" }}>Please Reach Out!</Typography>
             <Box style={{ display: "flex", alignSelf: "flex-start", gap: "var(--space-sm)" }}>
                 <Fab variant="extended" size="medium" className="button" style={{ display: "flex", alignSelf: "flex-start", gap: "var(--space-sm)" }} href="mailto:s.dixon@g.ucla.edu">
                     <Email/>

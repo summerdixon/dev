@@ -1,6 +1,6 @@
 import '../styles/global.css';
 
-import { Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 export default function Hero() {
   return (

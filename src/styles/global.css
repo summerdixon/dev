@@ -30,7 +30,7 @@ main { flex: 1 0 auto; }
 }
 
 .heroContainer {
-    margin-top: var(--space-xl);
+    margin-top: var(--space-4xl);
     margin-bottom: var(--space-xl);
     position: relative;
 }
@@ -103,7 +103,7 @@ footer .appBarContainer { width: 100%; }
 .centeredImage {
     display: block;
     margin: auto;
-    width: 50%;
+    width: 40%;
     padding-left: var(--space-md);
 }
 
@@ -240,4 +240,12 @@ html[data-anim="off"] .anim { animation-play-state: paused !important; }
     align-self: center;
     align-items: center;
     font-family: var(--font-body);
+}
+
+.projectsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: var(--space-sm);
+    gap: var(--space-xl);
+    align-items: start;
 }
