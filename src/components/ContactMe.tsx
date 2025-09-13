@@ -1,5 +1,3 @@
-import '../styles/global.css';
-
 import { useState } from 'react';
 import { Alert, Box, Fab, IconButton, Typography } from '@mui/material';
 import { ContentCopy, Email, AccountBox } from '@mui/icons-material';

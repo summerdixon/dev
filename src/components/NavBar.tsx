@@ -1,5 +1,3 @@
-import '../styles/global.css';
-
 import { AppBar, Box, Fab, Toolbar } from '@mui/material';
 
 export default function NavBar() {

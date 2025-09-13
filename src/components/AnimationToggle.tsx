@@ -1,5 +1,3 @@
-import '../styles/global.css';
-
 import * as React from 'react';
 import { ToggleButton, Tooltip } from '@mui/material';
 import { Animation } from '@mui/icons-material';

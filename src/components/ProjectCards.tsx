@@ -1,5 +1,3 @@
-import '../styles/global.css';
-
 import { Box, Typography } from '@mui/material';
 
 const base = import.meta.env.BASE_URL;

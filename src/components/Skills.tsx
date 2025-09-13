@@ -1,5 +1,3 @@
-import '../styles/global.css';
-
 import { Box, Chip, Divider, Typography } from '@mui/material';
 
 const programmingLanguages = [ "Python", "C", "C++", "Java", "JavaScript", "TypeScript", "Rust", "Verilog"];
