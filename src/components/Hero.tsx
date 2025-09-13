@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <Box className="heroContainer">
         <img src="/hero-img.svg" alt="computer window" className="centeredImage"/>
-        <img src="/arrow-cursor.svg" alt="" className="movingArrow anim" />
+        {/* <img src="/arrow-cursor.svg" alt="" className="movingArrow anim" /> */}
     </Box>
   );
 }

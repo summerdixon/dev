@@ -35,6 +35,14 @@ main { flex: 1 0 auto; }
     position: relative;
 }
 
+@media (max-width: 400px) {
+    .heroContainer {
+        margin-top: var(--space-4xl);
+        margin-bottom: var(--space-md);
+        position: relative;
+    }
+}
+
 .title {
     color: var(--color-blue-primary);
     font-family: var(--font-title);
@@ -54,10 +62,27 @@ main { flex: 1 0 auto; }
     font-weight: bold;
 }
 
+@media (max-width: 400px) {
+    .heading {
+        color: var(--color-blue-secondary);
+        font-family: var(--font-heading);
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
 .headingSecondary {
     color: var(--color-blue-tertiary);
     font-family: var(--font-heading);
     font-size: 24px;
+}
+
+@media (max-width: 400px) {
+    .headingSecondary {
+        color: var(--color-blue-tertiary);
+        font-family: var(--font-heading);
+        font-size: 18px;
+    }
 }
 
 .body {
@@ -107,6 +132,16 @@ footer .appBarContainer { width: 100%; }
     padding-left: var(--space-md);
 }
 
+@media (max-width: 400px) {
+    .centeredImage {
+        display: block;
+        margin: auto;
+        width: 80%;
+        padding-left: var(--space-xs);
+        padding-top: var(--space-md);
+    }
+}
+
 .contentContainer {
     margin-left: var(--space-3xl);
     margin-right: var(--space-3xl);
@@ -116,9 +151,21 @@ footer .appBarContainer { width: 100%; }
     gap: var(--space-xs);
 }
 
+@media (max-width: 400px) {
+    .contentContainer {
+        margin-left: var(--space-3xl);
+        margin-right: var(--space-3xl);
+        margin-bottom: var(--space-md);
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+    }
+}
+
 .chipGroup {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: var(--space-sm);
     margin-bottom: var(--space-sm);
 }
@@ -128,35 +175,68 @@ footer .appBarContainer { width: 100%; }
     color: white;
     font-family: var(--font-body);
 }
-
-.footerCritter {
-    --travel: 270px;
-    --duration: 25s;
-    position: absolute;
-    left: 60%;
-    bottom: 8px;
-    height: 48px;
-    pointer-events: none;
-    will-change: transform;
-    animation: critter-walk var(--duration) ease-in-out infinite;
-    z-index: 0;
-  }
   
-@keyframes critter-walk {
-    0%       { transform: translateX(calc(-50% - var(--travel))) scaleX(-1); }
-    49.999%  { transform: translateX(calc(-50% + var(--travel))) scaleX(-1); }
-    50%      { transform: translateX(calc(-50% + var(--travel))) scaleX(1); }
-    100%     { transform: translateX(calc(-50% - var(--travel))) scaleX(1); }
+.critterBox {
+    flex: 1 1 auto;
+    min-width: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+  
+.critterLane {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+  
+.footerCritter { 
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) scaleX(-1);
+    display: block; 
+    height: 2.5rem; 
+    max-width: 100%; 
+    object-fit: contain; 
+    pointer-events: none; 
+    animation: critter-walk 20s ease-in-out infinite; 
 }
 
-.animationToggle {
-    position: absolute;
-    top: var(--space-4xl);
-    right: var(--space-lg);
-    border-color: var(--color-blue-secondary);
-    border-radius: 12px;
-    border-width: 1.5px;
-    z-index: 2;
+@media (max-width: 400px) {
+    .footerCritter { 
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) scaleX(-1);
+        display: block; 
+        height: 2.5rem; 
+        max-width: 100%; 
+        object-fit: contain; 
+        pointer-events: none; 
+        animation: critter-walk 10s ease-in-out infinite; 
+    }
+}
+  
+@keyframes critter-walk {
+    0% {
+      left: 0;
+      transform: translateY(-50%) scaleX(-1);
+    }
+    49.999% {
+      left: calc(100% - 5rem);
+      transform: translateY(-50%) scaleX(-1);
+    }
+    50% {
+      left: calc(100% - 5rem);
+      transform: translateY(-50%) scaleX(1);
+    }
+    100% {
+      left: 0;
+      transform: translateY(-50%) scaleX(1);
+    }
 }
 
 .animationToggleEnabled {
@@ -170,6 +250,19 @@ footer .appBarContainer { width: 100%; }
     background: var(--color-gray-tertiary) !important;
 }
 
+@media (max-width: 400px) {
+    .animationToggleEnabled {
+        position: absolute;
+        top: var(--space-3xl);
+        right: var(--space-sm);
+        border-color: var(--color-blue-secondary);
+        border-radius: 12px;
+        border-width: 1.5px;
+        z-index: 2;
+        background: var(--color-gray-tertiary) !important;
+    }
+}
+
 .animationToggleDisabled {
     position: absolute;
     top: var(--space-4xl);
@@ -179,6 +272,19 @@ footer .appBarContainer { width: 100%; }
     border-width: 1.5px;
     z-index: 2;
     background: white;
+}
+
+@media (max-width: 400px) {
+    .animationToggleDisabled {
+        position: absolute;
+        top: var(--space-3xl);
+        right: var(--space-sm);
+        border-color: var(--color-gray-secondary);
+        border-radius: 12px;
+        border-width: 1.5px;
+        z-index: 2;
+        background: white;
+    }
 }
 
 .animationIconEnabled {
@@ -200,41 +306,6 @@ html[data-anim="off"] .anim { animation-play-state: paused !important; }
 :root[data-anim="on"] { --anim-play: running; }
 .anim { animation-play-state: var(--anim-play) !important; }
 
-.movingArrow {
-    --travel2: 5px;
-    --duration2: 5s;
-    position: absolute;
-    right: 20%;
-    top: 25%;
-    height: 24px;
-    pointer-events: none;
-    will-change: transform;
-    animation: arrow-move var(--duration2) ease-in-out infinite;
-    z-index: 0;
-  }
-  
-@keyframes arrow-move {
-    0%       { transform: translateX(calc(-50% - var(--travel2))) translateY(calc(-50% - var(--travel2))); }
-    50%      { transform: translateX(calc(-50% + var(--travel2))) translateY(calc(-50% + var(--travel2))); }
-    100%     { transform: translateX(calc(-50% - var(--travel2))) translateY(calc(-50% - var(--travel2))); }
-}
-
-.xButton {
-    z-index: 2;
-    position: absolute;
-    top: 3px;
-    right: 268px;
-    height: 36px;
-    width: 36px;
-    opacity: 0;
-}
-
-.xButton:hover {
-    background-color: transparent;
-    color: var(--color-blue-tertiary);
-    opacity: 0.5;
-}
-
 .alert {
     max-height: 36px;
     align-self: center;
@@ -247,5 +318,20 @@ html[data-anim="off"] .anim { animation-play-state: paused !important; }
     flex-wrap: wrap;
     margin-top: var(--space-sm);
     gap: var(--space-xl);
-    align-items: start;
+    justify-content: space-around;
+}
+
+.linkContainer {
+    display: flex; 
+    align-self: flex-start; 
+    gap: var(--space-sm);
+}
+
+@media (max-width: 400px) {
+    .linkContainer {
+        display: flex; 
+        flex-direction: column;
+        align-self: flex-start; 
+        gap: var(--space-sm);
+    }
 }

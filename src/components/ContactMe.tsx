@@ -22,16 +22,23 @@ export default function ContactMe() {
       };
 
     return (
-        <Box className="contentContainer" style={{ gap: "var(--space-md)"}}>
-            <Typography className="heading" style={{ paddingTop: "var(--space-4xl)" }}>Please Reach Out!</Typography>
-            <Box style={{ display: "flex", alignSelf: "flex-start", gap: "var(--space-sm)" }}>
-                <Fab variant="extended" size="medium" className="button" style={{ display: "flex", alignSelf: "flex-start", gap: "var(--space-sm)" }} href="mailto:s.dixon@g.ucla.edu">
-                    <Email/>
-                    s.dixon@g.ucla.edu
-                </Fab>
+        <Box className="contentContainer" style={{ gap: "var(--space-sm)"}}>
+            <Typography className="heading" style={{ paddingTop: "var(--space-4xl)" }}>
+                Please Reach Out!
+            </Typography>
+            <Typography className="body" style={{ paddingBottom: "var(--space-sm)"}}>
+                I would love to hear from you via email or LinkedIn!
+            </Typography>
+            <Box className="linkContainer">
+                <Box style={{ display: "flex", flexDirection: "row" }}>
+                    <Fab variant="extended" size="medium" className="button" style={{ display: "flex", alignSelf: "flex-start", gap: "var(--space-sm)" }} href="mailto:s.dixon@g.ucla.edu">
+                        <Email/>
+                        s.dixon@g.ucla.edu
+                    </Fab>
                 <IconButton onClick={handleCopyClick}>
                     <ContentCopy style={{ color: "var(--color-blue-secondary)"}}/>
                 </IconButton>
+                </Box>
                 {copySuccess && <Alert className="alert">{copySuccess}</Alert>}
             </Box>
             <Fab 

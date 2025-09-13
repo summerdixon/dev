@@ -1,6 +1,5 @@
 import '../styles/global.css';
-
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material';
 
 export default function Footer() {
   return (
@@ -8,7 +7,11 @@ export default function Footer() {
       <Toolbar sx={{ gap: 1 }}>
         <Typography className="bodyInverse">Last updated Sept. 8, 2025</Typography>
       </Toolbar>
-      <img src="/footer-critter.svg" alt="" className="footerCritter anim"/>
+      <Box className="critterBox">
+        <Box className="critterLane">
+            <img src="/footer-critter.svg" alt="" className="footerCritter anim" />
+        </Box>
+      </Box>
     </AppBar>
   );
 }
