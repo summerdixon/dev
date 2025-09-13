@@ -1,9 +1,6 @@
 import '../styles/global.css';
 
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import Toolbar from '@mui/material/Toolbar';
+import { AppBar, Box, Fab, Toolbar } from '@mui/material';
 
 export default function NavBar() {
     return (

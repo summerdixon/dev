@@ -1,9 +1,6 @@
 import '../styles/global.css';
 
-import Box from '@mui/material/Box';
-import Chip from '@mui/material/Chip';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
+import { Box, Chip, Divider, Typography } from '@mui/material';
 
 const programmingLanguages = [ "Python", "C", "C++", "Java", "JavaScript", "TypeScript", "Rust", "Verilog"];
 const frameworksLibraries = ["PyTorch", "React", "Node.js", "Flask", "Vite", "Three.js", "GraphQL", "Diesel"];

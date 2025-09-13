@@ -6,7 +6,7 @@ import Hero from "../components/Hero.tsx";
 import Introduction from "../components/Introduction.tsx";
 import Skills from "../components/Skills.tsx";
 import Footer from "../components/Footer.tsx";
-const title = "summer.dev";
+const title = "summerdixon";
 ---
 
 <html lang="en">
@@ -17,7 +17,7 @@ const title = "summer.dev";
 		#app-preloader{
 			position:fixed; inset:0; z-index:2147483647;
 			display:grid; place-items:center;
-			background: white;                    /* or var(--color-blue-primary) */
+			background: white;
 			transition: opacity .2s ease;
 		}
 		#app-preloader.hidden{ opacity:0; pointer-events:none; }
@@ -42,12 +42,12 @@ const title = "summer.dev";
 		  }
 		  if (!check()){
 			window.addEventListener('load', () => { if (!check()) done(); }, { once:true });
-			setTimeout(() => { if (!check()) done(); }, 1200); // 1.2s fallback
+			setTimeout(() => { if (!check()) done(); }, 1200);
 			window.addEventListener('app:styled', done, { once:true });
 		  }
 		})();
 	</script>
-    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="src/styles/global.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
