@@ -11,10 +11,47 @@ const title = "summer.dev";
   <head>
     <meta charset="utf-8" />
     <title>{title}</title>
+    <style is:inline>
+		#app-preloader{
+			position:fixed; inset:0; z-index:2147483647;
+			display:grid; place-items:center;
+			background: white;                    /* or var(--color-blue-primary) */
+			transition: opacity .2s ease;
+		}
+		#app-preloader.hidden{ opacity:0; pointer-events:none; }
+		.preloader-dot{
+			width:10px; height:10px; border-radius:50%;
+			background: var(--color-blue-secondary, #4361C3);
+			animation: preloader-bounce .8s infinite alternate;
+		}
+		@keyframes preloader-bounce{ to{ transform: translateY(-6px); } }
+	</style>
+	  <script is:inline>
+		(function () {
+		  function done(){
+			var el = document.getElementById('app-preloader');
+			if (!el) return;
+			el.classList.add('hidden');
+			setTimeout(() => el.remove(), 220);
+		  }
+		  function check(){
+			if (document.querySelector('style[data-emotion^="mui"]')) { done(); return true; }
+			return false;
+		  }
+		  if (!check()){
+			window.addEventListener('load', () => { if (!check()) done(); }, { once:true });
+			setTimeout(() => { if (!check()) done(); }, 1200); // 1.2s fallback
+			window.addEventListener('app:styled', done, { once:true });
+		  }
+		})();
+	</script>
     <link rel="stylesheet" href="src/styles/global.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body class="site">
+    <div id="app-preloader" aria-hidden="true">
+    	<div class="preloader-dot"></div>
+  	</div>
     <main>
       <MuiRoot client:load>
 		<NavBar/>
