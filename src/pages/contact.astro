@@ -16,16 +16,12 @@ const title = "summer.dev";
   </head>
   <body class="site">
     <main>
-      <MuiRoot client:idle>
+      <MuiRoot client:load>
 		    <NavBar/>
         <AnimationToggle client:load/>
-        <ContactMe client:load/>
+        <ContactMe/>
+        <Footer/>
       </MuiRoot>
     </main>
-    <footer>
-        <MuiRoot client:idle>
-            <Footer />
-        </MuiRoot>
-    </footer>
   </body>
 </html>
