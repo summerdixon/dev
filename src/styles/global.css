@@ -257,7 +257,7 @@ footer .appBarContainer { width: 100%; }
         right: var(--space-sm);
         border-color: var(--color-blue-secondary);
         border-radius: 12px;
-        border-width: 2px;
+        border-width: 1px;
         z-index: 2;
         background: var(--color-gray-tertiary) !important;
     }
@@ -281,7 +281,7 @@ footer .appBarContainer { width: 100%; }
         right: var(--space-sm);
         border-color: var(--color-gray-secondary);
         border-radius: 12px;
-        border-width: 2px;
+        border-width: 1px;
         z-index: 2;
         background: white;
     }
