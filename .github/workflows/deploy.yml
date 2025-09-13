@@ -25,22 +25,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: npm
 
       - name: Install deps
         run: npm ci
 
-      - name: Build
+      - name: Build Astro
         run: npm run build
 
       - name: Disable Jekyll
-        # prevents GitHub Pages from invoking Jekyll on your artifact
-        run: touch ./dist/.nojekyll
+        run: touch dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: dist
 
   deploy:
     needs: build
