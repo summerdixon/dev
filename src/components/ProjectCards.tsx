@@ -2,7 +2,7 @@ import '../styles/global.css';
 
 import { Box, Typography } from '@mui/material';
 
-const projectImages = ['/projects/project-1.svg', '/projects/project-2.svg', '/projects/project-3.svg', '/projects/project-4.svg', '/projects/project-5.svg', '/projects/project-6.svg', '/projects/project-7.svg', '/projects/project-8.svg'];
+const projectImages = ['{`${import.meta.env.BASE_URL}projects/project-1.svg`}', '{`${import.meta.env.BASE_URL}projects/project-2.svg`}', '{`${import.meta.env.BASE_URL}projects/project-3.svg`}', '{`${import.meta.env.BASE_URL}projects/project-4.svg`}', '{`${import.meta.env.BASE_URL}projects/project-5.svg`}', '{`${import.meta.env.BASE_URL}projects/project-6.svg`}', '{`${import.meta.env.BASE_URL}projects/project-7.svg`}', '{`${import.meta.env.BASE_URL}projects/project-8.svg`}'];
 
 export default function ProjectCards() {
     return (
