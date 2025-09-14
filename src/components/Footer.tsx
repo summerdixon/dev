@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <AppBar position="static" className="appBarContainer">
       <Toolbar sx={{ gap: 1 }}>
-        <Typography className="bodyInverse">Last updated Sept. 8, 2025</Typography>
+        <Typography className="bodyInverse">Last updated Sept. 13, 2025</Typography>
       </Toolbar>
       <Box className="critterBox">
         <Box className="critterLane">
